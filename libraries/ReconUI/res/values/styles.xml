@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- text -->
+	<style name="recon_jet_text_primary">
+		<item name="android:textColor">@color/recon_jet_text_primary</item>
+		<item name="android:textSize">30dp</item>
+		<item name="android:ellipsize">end</item>
+		<item name="android:lines">1</item>
+	</style>
+	<style name="recon_jet_text_secondary" parent="recon_jet_text_primary">
+		<item name="android:textColor">@color/recon_jet_text_secondary</item>
+	</style>
+	<style name="recon_jet_text_selectable" parent="recon_jet_text_primary">
+		<item name="android:textColor">@drawable/selectable_text_highlight_color</item>
+	</style>
+	<!-- action bar -->
+	<style name="recon_button_action_bar">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">38dp</item>
+		<item name="android:layout_alignParentBottom">true</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:layout_marginLeft">24dp</item>
+		<item name="android:layout_marginBottom">20dp</item>
+	</style>
+	<style name="recon_button_action">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">match_parent</item>
+	</style>
+	<!-- other -->
+	<style name="recon_horizontal_divider">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">1dp</item>
+		<item name="android:layout_marginTop">5dp</item>
+		<item name="android:layout_marginBottom">5dp</item>
+		<item name="android:background">@android:color/white</item>
+	</style>
+	<style name="recon_list">
+		<item name="android:divider">@null</item>
+		<item name="android:dividerHeight">-3dp</item>
+		<item name="android:fadingEdgeLength">20dp</item>
+		<item name="android:listSelector">@android:color/transparent</item>
+		<item name="android:requiresFadingEdge">vertical</item>
+		<item name="android:scrollbars">none</item>
+	</style>
+	<!-- animation -->
+	<style name="recon_dialog_animation">
+		<item name="android:windowEnterAnimation">@anim/fade_in_slide_in_bottom</item>
+		<item name="android:windowExitAnimation">@anim/fade_out</item>
+	</style>
+</resources>

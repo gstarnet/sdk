@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.reconinstruments.ui.examples"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="16"/>
+    <application android:label="Recon Widget Examples"
+			android:theme="@style/ReconTheme">
+        <activity android:name=".MainExampleList">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".carousel.CarouselExamples"/>
+        <activity android:name=".carousel.ImageCarousel"/>
+        <activity android:name=".carousel.StatCarousel"/>
+        <activity android:name=".list.ListExamples"/>
+        <activity android:name=".list.ListWithInfoActivity"/>
+        <activity android:name=".list.ListItemTypes"/>
+        <activity android:name=".dialog.DialogExamples"/>
+        <activity android:name=".TextExamples"/>
+        <activity android:name=".ActionBarExample"/>
+    </application>
+</manifest>

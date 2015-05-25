@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:auto="http://schemas.android.com/apk/res-auto">
+    <style name="ReconTheme" parent="android:Theme.NoTitleBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/recon_jet_background</item>
+        <item name="android:colorBackground">@color/recon_jet_background</item>
+        <item name="android:dialogTheme">@style/ReconTheme.Dialog</item>
+
+        <item name="android:textViewStyle">@style/recon_jet_text_primary</item>
+        <item name="android:listViewStyle">@style/recon_list</item>
+    </style>
+    <style name="ReconTheme.Fullscreen" parent="ReconTheme">
+        <item name="android:windowBackground">@color/recon_jet_background</item>
+        <item name="android:colorBackground">@color/recon_jet_background</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="ReconTheme.Dialog" parent="ReconTheme">
+        <item name="android:windowBackground">@color/recon_jet_background_translucent</item>
+        <item name="android:windowAnimationStyle">@style/recon_dialog_animation</item>
+    </style>
+</resources>
