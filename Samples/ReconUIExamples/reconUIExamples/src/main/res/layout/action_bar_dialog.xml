@@ -1,0 +1,39 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        tools:text="TITLE"
+        android:textSize="36dp" />
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        tools:text="Subtitle"
+        android:textSize="28dp" />
+
+    <LinearLayout
+        android:id="@+id/action_bar"
+        style="@style/recon_button_action_bar">
+
+        <com.reconinstruments.ui.view.ButtonActionView
+            style="@style/recon_button_action"
+            auto:actionText="OK"
+            auto:buttonType="select"
+            />
+        <com.reconinstruments.ui.view.ButtonActionView
+            style="@style/recon_button_action"
+            auto:actionText="BACK"
+            auto:buttonType="back"
+            />
+    </LinearLayout>
+</RelativeLayout>

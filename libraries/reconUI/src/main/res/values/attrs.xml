@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="ReconTextView">
+		<attr name="fontResource" format="reference" />
+	</declare-styleable>
+
+    <declare-styleable name="CarouselViewPager">
+        <attr name="showBreadcrumbs" format="boolean" />
+		<attr name="animateSelection" format="boolean" />
+		<attr name="pageMargin" format="dimension" />
+		<attr name="pageWidth" format="dimension" />
+    </declare-styleable>
+
+	<declare-styleable name="ButtonActionView">
+		<attr name="actionText" format="string" localization="suggested" />
+		<attr name="buttonIcon" format="reference" />
+		<attr name="buttonType">
+			<enum name="select" value="0" />
+			<enum name="back" value="1" />
+			<enum name="up" value="2" />
+			<enum name="down" value="3" />
+			<enum name="updown" value="4" />
+		</attr>
+	</declare-styleable>
+
+</resources>

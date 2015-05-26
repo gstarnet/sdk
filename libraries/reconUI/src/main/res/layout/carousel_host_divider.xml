@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:auto="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:gravity="center">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:text="TITLE"
+        android:textColor="#ffffff"
+        android:includeFontPadding="false"
+        android:textSize="30sp" />
+
+    <LinearLayout style="@style/recon_horizontal_divider" />
+
+    <com.reconinstruments.ui.carousel.CarouselViewPager
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        auto:showBreadcrumbs="false"/>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="recon_jet_background">#000000</color>
+	<color name="recon_jet_background_translucent">#B3000000</color>
+
+	<color name="recon_jet_text_primary">#FFFFFF</color>
+	<color name="recon_jet_text_secondary">#808080</color>
+
+	<color name="recon_jet_white">#FFFFFF</color>
+	<color name="recon_jet_gray">#808080</color>
+	<color name="recon_jet_highlight">#ffb300</color>
+</resources>

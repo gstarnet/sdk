@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="42dp"
+	android:gravity="left|center_vertical"
+	android:orientation="horizontal"
+	android:paddingLeft="20px"
+	android:paddingRight="30px">
+
+	<ImageView
+		android:id="@+id/icon"
+		android:layout_width="34dp"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		tools:src="@drawable/icon_checkmark" />
+	<TextView
+		android:id="@+id/title"
+		style="@style/recon_jet_text_selectable"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_toRightOf="@id/icon"
+		android:layout_marginLeft="10px"
+		android:gravity="left|center_vertical"
+		android:textSize="36dp"
+		tools:text="TITLE" />
+	<TextView
+		android:id="@+id/subtitle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_alignBaseline="@id/title"
+		android:textSize="22dp"
+		tools:text="SUBTITLE" />
+	<ImageView
+		android:id="@+id/subicon"
+		android:layout_width="34dp"
+		android:layout_height="wrap_content"
+		android:paddingTop="7dp"
+		android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
+		tools:src="@drawable/icon_warning"/>
+</RelativeLayout>

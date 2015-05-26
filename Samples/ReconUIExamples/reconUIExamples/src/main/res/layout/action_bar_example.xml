@@ -1,0 +1,56 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="TITLE"
+        android:textSize="30dp" />
+
+    <LinearLayout style="@style/recon_horizontal_divider"
+                  android:layout_below="@+id/title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Content"
+            android:textSize="32dp" />
+        <TextView
+            android:id="@+id/description"
+            style="@style/recon_jet_text_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Description"
+            android:textSize="24dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/action_bar"
+        style="@style/recon_button_action_bar">
+
+        <com.reconinstruments.ui.view.ButtonActionView
+            style="@style/recon_button_action"
+            auto:actionText="OK"
+            auto:buttonType="select"
+            />
+        <com.reconinstruments.ui.view.ButtonActionView
+            style="@style/recon_button_action"
+            auto:actionText="BACK"
+            auto:buttonType="back"
+            />
+    </LinearLayout>
+</RelativeLayout>

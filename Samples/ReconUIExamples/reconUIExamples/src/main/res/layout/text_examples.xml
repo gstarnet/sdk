@@ -1,0 +1,42 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="30dip">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Standard text\nopen sans regular"
+                android:lines="2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bold text\nopen sans bold"
+                android:lines="2"
+                android:textStyle="bold"/>
+            <com.reconinstruments.ui.view.ReconTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                auto:fontResource="@raw/opensans_semibold"
+                android:lines="2"
+                android:text="Semi-bold text (resource)\nopen sans semibold"/>
+            <com.reconinstruments.ui.view.ReconTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                auto:fontResource="@raw/opensans_light"
+                android:lines="2"
+                android:text="Light text (resource)\nopen sans light"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
