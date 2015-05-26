@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ReconTheme.NoTitleBar" parent="android:Theme.NoTitleBar">
+        <item name="android:windowBackground">@color/recon_window_bg</item>
+        <item name="android:colorBackground">@color/recon_window_bg</item>
+    </style>
+
+    <style name="ReconTheme.NoTitleBar.Fullscreen" parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@color/recon_window_bg</item>
+        <item name="android:colorBackground">@color/recon_window_bg</item>
+    </style>
+
+    <style name="ReconTheme.Dialog" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+</resources>

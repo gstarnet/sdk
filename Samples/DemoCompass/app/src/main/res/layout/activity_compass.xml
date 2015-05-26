@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/compass_activity_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".CompassActivity" >
+
+    <ImageView
+        android:id="@+id/compass_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="43dp"
+        android:contentDescription="@string/bar_cd"
+        android:src="@drawable/compass_bar" />
+
+    <ImageView
+        android:id="@+id/compass_underline"
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:layout_marginTop="104dp"
+        android:contentDescription="@string/underline_cd"
+        android:src="@drawable/orange_pointer" />
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="recon_alt_color">#f58020</color>
+    <color name="recon_speed_color">#6abd45</color>
+    <color name="recon_air_color">#FF00FF</color>
+    <color name="recon_vertical_color">#00edff</color>
+    <color name="recon_selected_text_color">#ff000000</color>
+    <color name="recon_unselected_text_color">#dddddd</color>
+    <color name="recon_highlighter_color">#f5f5f5</color>
+    <color name="recon_text_focus_color">#000000</color>
+    <color name="recon_text_nonfocus_color">#a3a4a5</color>
+    <color name="recon_window_bg">#000000</color>
+    <color name="recon_popup_title_bg">#2d76bf</color>
+    <color name="recon_popup_inner_stroke">#7e7e7e</color>
+    <color name="recon_mid_gray">#343434</color>
+    <color name="recon_text_gray">#a3a4a5</color>
+    <color name="recon_jet_background">#000000</color>
+    <color name="recon_jet_highlight_text_button">#ffb300</color>
+    <color name="recon_jet_non_highlight_text_button">#a3a3a3</color>
+    <color name="recon_white">#ffffff</color>
+    <color name="recon_breadcrumb_grey">#3e3e3e</color>
+
+</resources>

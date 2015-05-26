@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Demo Compass</string>
+    <string name="bar_cd">"bar"</string>
+    <string name="underline_cd">"underline"</string>
+  
+</resources>

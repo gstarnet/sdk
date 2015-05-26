@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.reconinstruments.demo.compass" android:versionCode="1000" android:versionName="MS1">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/compass_icon"
+        android:label="@string/app_name"
+        android:theme="@style/ReconTheme.NoTitleBar">
+        <uses-library android:name="com.reconinstruments.os" android:required="true" />
+        <activity
+            android:name="com.reconinstruments.demo.compass.CompassActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:icon="@drawable/compass_icon"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
