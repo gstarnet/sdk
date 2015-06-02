@@ -1,1 +1,0 @@
-/Users/gilzhaiek/Dev/jet/mydroid/device/ti/jet/HUDSDK/demos/HUDConnectivityDemo/build/intermediates/classes/debug
