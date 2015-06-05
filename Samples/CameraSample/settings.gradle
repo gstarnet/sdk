@@ -1,0 +1,3 @@
+include ':cameraSample'
+include ':reconUI'
+project(':reconUI').projectDir = new File('../../libraries/reconUI')

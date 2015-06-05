@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!--<FrameLayout
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>-->
+    <com.reconinstruments.camerasample.CameraPreview
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <FrameLayout
+        android:id="@+id/mode_switcher"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp">
+        <View
+            android:id="@+id/selected_outline"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_gravity="center"
+            android:background="@drawable/module_select_outline_draw" />
+        <com.reconinstruments.ui.carousel.CarouselViewPager
+            android:id="@+id/carousel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            auto:pageWidth="60dp"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/recording_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_recording_indicator"
+        android:drawablePadding="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:shadowColor="@android:color/black"
+        android:shadowDy="3.0"
+        android:shadowRadius="3.0"
+        android:textSize="40dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="00:10"/>
+
+</RelativeLayout>
