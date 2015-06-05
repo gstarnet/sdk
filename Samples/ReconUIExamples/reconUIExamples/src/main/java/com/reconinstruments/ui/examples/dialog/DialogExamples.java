@@ -88,7 +88,7 @@ public class DialogExamples extends SimpleListActivity {
             new CheckedSelectionItem("10 mins"),
             new CheckedSelectionItem("15 mins")
     };
-    public class CheckedSelectionItem extends StandardCarouselItem {
+    public static class CheckedSelectionItem extends StandardCarouselItem {
         public CheckedSelectionItem(String title) {
             super(title);
         }
