@@ -16,9 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
-    compile project(':..:..:libraries:reconUI')
+    compile project(':reconUI')
     compile 'com.android.support:support-v4:18.0.0'
 }
