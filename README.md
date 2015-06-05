@@ -1,6 +1,9 @@
 # SDK
 Recon SDK related files
 
+Windows 8 adb drivers and latest Lollipop Ubuntu/Windows executables:
+http://www.reconinstruments.com/wp-content/recon-sdk/adb.zip
+
 First time only to get the SDK Add-On:
 - Open the Android SDK Manager
 - Click on Tools
