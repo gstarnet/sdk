@@ -1,5 +1,6 @@
 package com.reconinstruments.camerasample;
 
+import android.content.Context;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.os.Bundle;
@@ -68,21 +69,33 @@ public class CameraActivity extends CarouselActivity {
     @Override
     protected List<? extends CarouselItem> createContents() {
         return Arrays.asList(
-                new StandardCarouselItem(R.drawable.photo_icon) {
-                    @Override
-                    public void onClick() {
-                        camera.takePicture(null, null, jpegSavedCallback);
-                    }
-                },
-                new StandardCarouselItem(R.drawable.video_icon) {
-                    @Override
-                    public void onClick() {
-                        if(!isRecording())
-                            startRecording();
-                        else
-                            stopRecording();
-                    }
-                });
+                new StandardCarouselItem(R.drawable.photo_icon),
+                new StandardCarouselItem(R.drawable.video_icon));
+    }
+
+    public CAM_MODE getCamMode() {
+        if(getCarousel().getCurrentItem()==0)
+            return CAM_MODE.PHOTO;
+        else
+            return CAM_MODE.VIDEO;
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if(keyCode==KeyEvent.KEYCODE_DPAD_CENTER) {
+            switch (getCamMode()) {
+                case PHOTO:
+                    camera.takePicture(null, null, jpegSavedCallback);
+                    break;
+                case VIDEO:
+                    if(!isRecording())
+                        startRecording();
+                    else
+                        stopRecording();
+                    break;
+            }
+        }
+        return super.onKeyUp(keyCode, event);
     }
 
     PictureCallback jpegSavedCallback = new PictureCallback() {
