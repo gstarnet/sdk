@@ -1,8 +1,11 @@
 package com.reconinstruments.ui.examples.carousel;
 
+import android.content.Context;
+import android.content.Intent;
 import com.reconinstruments.ui.carousel.CarouselActivity;
 import com.reconinstruments.ui.carousel.CarouselItem;
 import com.reconinstruments.ui.carousel.StandardCarouselItem;
+import com.reconinstruments.ui.examples.ActionBarExample;
 import com.reconinstruments.ui.examples.R;
 
 import java.util.Arrays;
@@ -15,13 +18,17 @@ public class ImageCarousel extends CarouselActivity {
         return R.layout.carousel_host;
     }
 
-    class ImageCarouselItem extends StandardCarouselItem {
+    static class ImageCarouselItem extends StandardCarouselItem {
         public ImageCarouselItem(String title, Integer icon) {
             super(title, icon);
         }
         @Override
         public int getLayoutId() {
             return R.layout.carousel_item_title_icon_column;
+        }
+        @Override
+        public void onClick(Context context) {
+            context.startActivity(new Intent(context, ActionBarExample.class));
         }
     }
     CarouselItem[] items = {

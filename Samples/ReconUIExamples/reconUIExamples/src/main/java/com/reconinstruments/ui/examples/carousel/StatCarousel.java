@@ -18,7 +18,7 @@ public class StatCarousel extends CarouselActivity {
     }
 
 
-    public class ListItem extends CarouselItem {
+    static class ListItem extends CarouselItem {
         String value;
         String unit;
         String type;

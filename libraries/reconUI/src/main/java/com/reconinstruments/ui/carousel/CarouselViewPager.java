@@ -160,14 +160,14 @@ public class CarouselViewPager extends ViewPager {
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if(keyCode==KeyEvent.KEYCODE_DPAD_CENTER) {
             CarouselItemFragment currentFragment = getAdapter().getCurrentItem();
+            CarouselItem currentItem = currentFragment.getItem();
             if(animateSelection) {
                 currentFragment.getView().startAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.carousel_item_push));
             }
-            currentFragment.onClick();
+            currentItem.onClick(getContext());
             if(onItemSelectedListener!=null) {
-                onItemSelectedListener.onItemSelected(this,currentFragment.getItem(), currentFragment.getPosition());
+                onItemSelectedListener.onItemSelected(this,currentItem, currentFragment.getPosition());
             }
-            return true;
         }
         return super.onKeyUp(keyCode,event);
     }

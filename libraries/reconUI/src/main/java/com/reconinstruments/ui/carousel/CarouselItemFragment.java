@@ -76,10 +76,6 @@ public class CarouselItemFragment extends Fragment {
             updateViewForPosition(initialPosition);
     }
 
-    public void onClick() {
-        carouselItem.onClick();
-    };
-
     /**
      * updates the relative position of the fragment, calls through to CarouselItem.updateViewForPosition
      */

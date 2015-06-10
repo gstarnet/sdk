@@ -1,11 +1,16 @@
 package com.reconinstruments.ui.carousel;
 
+import android.content.Context;
 import android.view.View;
 
 import java.io.Serializable;
 
 /**
  * Serializable object to define views and behaviour for items in a carousel
+ *
+ * note: because it is serializable, if implemented as an inner class of an activity
+ * make it a static class, because the activity cannot be serialized
+ * Because Serializable uses reflection, serialization errors can only be caught at runtime
  */
 public abstract class CarouselItem implements Serializable {
 
@@ -17,7 +22,7 @@ public abstract class CarouselItem implements Serializable {
     /**
      * Called when select is pressed while view is selected
      */
-    public void onClick() {}
+    public void onClick(Context context) {}
 
     /**
      * Implement to modify view depending on the relative position in the carousel
