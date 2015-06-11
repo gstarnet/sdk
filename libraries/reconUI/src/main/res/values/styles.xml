@@ -10,6 +10,9 @@
 	<style name="recon_jet_text_secondary" parent="recon_jet_text_primary">
 		<item name="android:textColor">@color/recon_jet_text_secondary</item>
 	</style>
+	<style name="recon_jet_text_highlight" parent="recon_jet_text_primary">
+		<item name="android:textColor">@color/recon_jet_highlight</item>
+	</style>
 	<style name="recon_jet_text_selectable" parent="recon_jet_text_primary">
 		<item name="android:textColor">@drawable/selectable_text_highlight_color</item>
 	</style>
