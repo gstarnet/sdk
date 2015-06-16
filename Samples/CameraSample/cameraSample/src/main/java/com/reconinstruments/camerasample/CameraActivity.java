@@ -24,11 +24,6 @@ public class CameraActivity extends CarouselActivity {
 
     private static final String TAG = "CameraActivity";
 
-    public enum CAM_MODE {
-        PHOTO,
-        VIDEO
-    }
-
     Camera camera;
 
     CameraPreview preview;
@@ -40,13 +35,26 @@ public class CameraActivity extends CarouselActivity {
     SimpleDateFormat recordTimeFormatter = new SimpleDateFormat("mm:ss", Locale.getDefault());
 
     @Override
-    public int getLayoutId() {
-        return R.layout.main;
-    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+
+        getCarousel().setContents(
+                new StandardCarouselItem(R.drawable.photo_icon) {
+                    @Override
+                    public void onClick(Context context) {
+                        camera.takePicture(null, null, jpegSavedCallback);
+                    }
+                },
+                new StandardCarouselItem(R.drawable.video_icon) {
+                    @Override
+                    public void onClick(Context context) {
+                        if(!isRecording())
+                            startRecording();
+                        else
+                            stopRecording();
+                    }
+                });
 
         preview = (CameraPreview) findViewById(R.id.preview);
         recordingTimeView = (TextView) findViewById(R.id.recording_time);
@@ -64,38 +72,6 @@ public class CameraActivity extends CarouselActivity {
     protected void onPause() {
         super.onPause();
         closeCamera();
-    }
-
-    @Override
-    protected List<? extends CarouselItem> createContents() {
-        return Arrays.asList(
-                new StandardCarouselItem(R.drawable.photo_icon),
-                new StandardCarouselItem(R.drawable.video_icon));
-    }
-
-    public CAM_MODE getCamMode() {
-        if(getCarousel().getCurrentItem()==0)
-            return CAM_MODE.PHOTO;
-        else
-            return CAM_MODE.VIDEO;
-    }
-
-    @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
-        if(keyCode==KeyEvent.KEYCODE_DPAD_CENTER) {
-            switch (getCamMode()) {
-                case PHOTO:
-                    camera.takePicture(null, null, jpegSavedCallback);
-                    break;
-                case VIDEO:
-                    if(!isRecording())
-                        startRecording();
-                    else
-                        stopRecording();
-                    break;
-            }
-        }
-        return super.onKeyUp(keyCode, event);
     }
 
     PictureCallback jpegSavedCallback = new PictureCallback() {

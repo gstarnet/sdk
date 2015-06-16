@@ -4,7 +4,6 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.TextView;
 import com.reconinstruments.ui.carousel.CarouselItem;
-import com.reconinstruments.ui.carousel.CarouselItemFragment;
 import com.reconinstruments.ui.carousel.CarouselViewPager;
 import com.reconinstruments.ui.carousel.StandardCarouselItem;
 import com.reconinstruments.ui.dialog.CarouselDialog;
