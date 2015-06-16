@@ -24,7 +24,7 @@ public class TestActivity extends Activity implements OnClickListener, IHUDConne
     Button mHUDConnectedTV;
     Button mLocalWebTV, mRemoteWebTV;
 
-    public static HUDConnectivityManager mHUDConnectivityManager = null;
+    private HUDConnectivityManager mHUDConnectivityManager = null;
 
     private final int MRED = 0xFFFF0000;
     private final int MORANGE = 0xFFFF6600;
@@ -70,14 +70,14 @@ public class TestActivity extends Activity implements OnClickListener, IHUDConne
     }
 
     @Override
-    public void onResume(){
+    public void onStart(){
         super.onStart();
         //registering the IHUDConnectivity to HUDConnectivityManager
         mHUDConnectivityManager.register(this);
     }
 
     @Override
-    public void onPause(){
+    public void onStop(){
         //unregistering the IHUDConnectivity from HUDConnectivityManager
         mHUDConnectivityManager.unregister(this);
         super.onStop();

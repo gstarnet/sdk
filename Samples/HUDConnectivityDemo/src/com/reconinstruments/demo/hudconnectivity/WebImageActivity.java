@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.reconinstruments.os.HUDOS;
+import com.reconinstruments.os.connectivity.HUDConnectivityManager;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest.RequestMethod;
 import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
@@ -16,10 +18,10 @@ import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
 public class WebImageActivity extends Activity {
 
     private final String TAG = this.getClass().getSimpleName();
-
     public static String EXTRA_IMAGE_URL = "IMAGE_URL";
 
-    ImageView mImage = null;
+    private HUDConnectivityManager mHUDConnectivityManager;
+    private ImageView mImage = null;
     int mDialogRefCnt = 0;
     private ProgressDialog mDialog;
 
@@ -31,6 +33,7 @@ public class WebImageActivity extends Activity {
         mDialog.setMessage("Downloading...");
         setContentView(R.layout.image_view);
         mImage = (ImageView) findViewById(R.id.imageView);
+        mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
     }
 
     @Override
@@ -71,7 +74,7 @@ public class WebImageActivity extends Activity {
             try {
                 //Http Get Request
                 HUDHttpRequest request = new HUDHttpRequest(RequestMethod.GET, urlDisplay);
-                HUDHttpResponse response = TestActivity.mHUDConnectivityManager.sendWebRequest(request);
+                HUDHttpResponse response = mHUDConnectivityManager.sendWebRequest(request);
                 if (response.hasBody()) {
                     byte[] data = response.getBody();
                     mIcon11 = BitmapFactory.decodeByteArray(data, 0, data.length);
