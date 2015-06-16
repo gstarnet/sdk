@@ -12,12 +12,6 @@ import java.util.List;
 
 public class StatCarousel extends CarouselActivity {
 
-    @Override
-    public int getLayoutId() {
-        return R.layout.carousel_host_stat;
-    }
-
-
     static class ListItem extends CarouselItem {
         String value;
         String unit;
@@ -50,23 +44,19 @@ public class StatCarousel extends CarouselActivity {
                 typeText.setVisibility(View.GONE);
         }
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.carousel_host_stat);
 
         TextView title = (TextView)findViewById(R.id.title);
         title.setText("ALL TIME BEST");
-    }
 
-    CarouselItem[] items = {
-            new ListItem("34.5", "km", "DISTANCE"),
-            new ListItem("51.12", "/km", "AVG. PACE"),
-            new ListItem("14", "cal", "CALORIES BURNED"),
-            new ListItem("5:50", "", "DURATION")
-    };
-
-    @Override
-    public List<CarouselItem> createContents() {
-        return Arrays.asList(items);
+        getCarousel().setContents(
+                new ListItem("34.5", "km", "DISTANCE"),
+                new ListItem("51.12", "/km", "AVG. PACE"),
+                new ListItem("14", "cal", "CALORIES BURNED"),
+                new ListItem("5:50", "", "DURATION"));
     }
 }

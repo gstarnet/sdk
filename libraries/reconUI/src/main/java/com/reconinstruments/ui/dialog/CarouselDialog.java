@@ -61,7 +61,8 @@ public abstract class CarouselDialog extends BaseDialog {
         View view = inflater.inflate(layout, outerDialog, true);
         carousel = (CarouselViewPager) view.findViewById(R.id.carousel);
         carousel.setBreadcrumbContainer(outerDialog);
-        carousel.setContents(this, items, initialSelection);
+        carousel.setContents(items);
+        carousel.setSelection(initialSelection);
         carousel.setOnItemSelectedListener(new CarouselViewPager.OnItemSelectedListener() {
             @Override
             public void onItemSelected(CarouselViewPager parent, CarouselItem item, int position) {

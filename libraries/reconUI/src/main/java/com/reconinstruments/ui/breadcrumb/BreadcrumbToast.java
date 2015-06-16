@@ -48,12 +48,12 @@ public class BreadcrumbToast {
      * Creates a new breadcrumb toast, but does not display it, use updateBreadcrumbs to show the breadcrumbs
      * at a specific position
      *
-     * @param context Activity context
+     * @param context context
      * @param parent Parent view to attach toast to
      * @param horizontal horizontal breadcrumbs
      * @param size number of items in list
      */
-    public BreadcrumbToast(Activity context,ViewGroup parent,boolean horizontal,int size) {
+    public BreadcrumbToast(Context context,ViewGroup parent,boolean horizontal,int size) {
         breadcrumbView = new BreadcrumbView(context,horizontal,0,size);
         ViewGroup.LayoutParams params = horizontal ?
                 new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT) :

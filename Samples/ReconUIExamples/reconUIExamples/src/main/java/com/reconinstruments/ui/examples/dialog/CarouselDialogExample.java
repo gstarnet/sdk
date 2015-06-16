@@ -56,9 +56,9 @@ public class CarouselDialogExample extends CarouselDialog implements DialogBuild
     public void updateView(View view) {
         TextView titleView = (TextView) view.findViewById(R.id.title);
 
-        CarouselItemFragment itemFragment = getCarousel().getAdapter().getCurrentItem();
-        StandardCarouselItem item = (StandardCarouselItem) itemFragment.getItem();
-        int position = itemFragment.getPosition();
+        StandardCarouselItem item = (StandardCarouselItem) getCarousel().getCurrentCarouselItem();
+        //StandardCarouselItem item = (StandardCarouselItem) itemFragment.getItem();
+        int position = getCarousel().getCurrentItem();//itemFragment.getPosition();
         titleView.setText(item.getTitle());
 
         TextView subtitleView = (TextView) view.findViewById(R.id.subtitle);
