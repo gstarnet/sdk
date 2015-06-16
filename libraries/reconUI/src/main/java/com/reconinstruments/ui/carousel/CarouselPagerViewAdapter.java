@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * ViewPager adapter class for CarouselItemFragments
  */
-public class CarouselPagerViewAdapter extends PagerAdapter implements CarouselPagerAdapter {
+public class CarouselPagerViewAdapter extends PagerAdapter {
 
     LayoutInflater inflater;
 
@@ -34,7 +34,7 @@ public class CarouselPagerViewAdapter extends PagerAdapter implements CarouselPa
     public Object instantiateItem(ViewGroup container, int position) {
 
         View view = getView(position);
-        ((ViewPager) container).addView(view, 0);
+        ((ViewPager) container).addView(view, position);
 
         return view;
     }
@@ -54,7 +54,6 @@ public class CarouselPagerViewAdapter extends PagerAdapter implements CarouselPa
         return view==((View)object);
     }
 
-    @Override
     public View getView(int position) {
         View view = views[position];
         if(view==null) {
@@ -66,12 +65,10 @@ public class CarouselPagerViewAdapter extends PagerAdapter implements CarouselPa
         return view;
     }
 
-    @Override
     public CarouselItem getCarouselItem(int position) {
         return items.get(position);
     }
 
-    @Override
     public void updateViewForPosition(int position, CarouselItem.POSITION rel_position) {
 
         View view = getView(position);

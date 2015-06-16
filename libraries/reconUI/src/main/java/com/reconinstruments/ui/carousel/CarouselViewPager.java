@@ -37,7 +37,7 @@ public class CarouselViewPager extends ViewPager {
     static final int MIN_NUM_FRAGMENTS_TO_SHOW_BREADCRUMBS = 3;
 
     // Adapter for CarouselItemFragments
-    CarouselPagerAdapter mPagerAdapter;
+    CarouselPagerViewAdapter mPagerAdapter;
 
     // configurable attributes
     // whether to display a horizontal breadcrumb view when the page is changed
@@ -140,7 +140,7 @@ public class CarouselViewPager extends ViewPager {
         });
     }
 
-    public CarouselPagerAdapter getCarouselAdapter() {
+    public CarouselPagerViewAdapter getCarouselAdapter() {
         return mPagerAdapter;
     }
 
@@ -192,21 +192,6 @@ public class CarouselViewPager extends ViewPager {
             getCarouselAdapter().updateViewForPosition(selection - 1, CarouselItem.POSITION.LEFT);
         if (selection<getAdapter().getCount()-1)
             getCarouselAdapter().updateViewForPosition(selection + 1, CarouselItem.POSITION.RIGHT);
-    }
-
-
-    public void setContentsForFragments(FragmentManager fm,CarouselItem... items){
-        setContentsForFragments(fm, Arrays.asList(items));
-    }
-    /**
-     * Set the items to be displayed and finish initializing the view
-     * @param fm fragment activity containing this view pager (only use if there is no child fragment within the
-     *                 activity containing this view)
-     * @param items items to display
-     */
-    public void setContentsForFragments(FragmentManager fm, List<? extends CarouselItem> items){
-        mPagerAdapter = new CarouselPagerFragmentAdapter(fm, items, this);
-        initializeContents(items.size());
     }
 
     public void setContents(CarouselItem... items){
