@@ -34,7 +34,7 @@ public class CarouselPagerViewAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
 
         View view = getView(position);
-        ((ViewPager) container).addView(view, position);
+        ((ViewPager) container).addView(view, 0);
 
         return view;
     }
