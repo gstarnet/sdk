@@ -59,18 +59,16 @@ public class UploadFileActivity extends Activity {
         mGoodCounter = 0;
         mBadCounter = 0;
 
-        for (int i = 0; i < 1; i++) {
-            new DownloadFileTask(data, url).execute();
-        }
+        new UploadFileTask(data, url).execute();
     }
 
-    private class DownloadFileTask extends AsyncTask<String, Void, Boolean> {
+    private class UploadFileTask extends AsyncTask<String, Void, Boolean> {
 
         byte[] mData;
         String mUrl;
         String mComment;
 
-        public DownloadFileTask(byte[] data, String url) {
+        public UploadFileTask(byte[] data, String url) {
             mUrl = url;
             mData = data;
             mRequestCounter++;

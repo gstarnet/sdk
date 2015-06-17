@@ -69,7 +69,7 @@ public class WebImageActivity extends Activity {
         @Override
         protected Bitmap doInBackground(String... urls) {
             String urlDisplay = urls[0];
-            Bitmap mIcon11 = null;
+            Bitmap bitmapImg = null;
 
             try {
                 //Http Get Request
@@ -77,12 +77,12 @@ public class WebImageActivity extends Activity {
                 HUDHttpResponse response = mHUDConnectivityManager.sendWebRequest(request);
                 if (response.hasBody()) {
                     byte[] data = response.getBody();
-                    mIcon11 = BitmapFactory.decodeByteArray(data, 0, data.length);
+                    bitmapImg = BitmapFactory.decodeByteArray(data, 0, data.length);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return mIcon11;
+            return bitmapImg;
         }
 
         @Override
