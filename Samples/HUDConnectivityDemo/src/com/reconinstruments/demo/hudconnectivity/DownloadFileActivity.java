@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.reconinstruments.os.HUDOS;
+import com.reconinstruments.os.connectivity.HUDConnectivityManager;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest.RequestMethod;
 import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
@@ -20,6 +22,8 @@ public class DownloadFileActivity extends Activity {
     public static int mGoodCounter = 0;
     public static int mBadCounter = 0;
 
+    private HUDConnectivityManager mHUDConnectivityManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,8 @@ public class DownloadFileActivity extends Activity {
         mNumberOfGoodResponse = (TextView) findViewById(R.id.numberOfGoodResponse);
         mNumberOfBadResponse = (TextView) findViewById(R.id.numberOfBadResponse);
         mCommentTextView = (TextView) findViewById(R.id.commentTextView);
+
+        mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
     }
 
     @Override
@@ -67,7 +73,7 @@ public class DownloadFileActivity extends Activity {
                 
                 //Get Request
                 HUDHttpRequest request = new HUDHttpRequest(RequestMethod.GET, mUrl);
-                HUDHttpResponse response = TestActivity.mHUDConnectivityManager.sendWebRequest(request);
+                HUDHttpResponse response = mHUDConnectivityManager.sendWebRequest(request);
                 if (response.hasBody()) {
                     mComment = "response bodySize:" + response.getBody().length;
                     result = true;

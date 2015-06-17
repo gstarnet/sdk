@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.reconinstruments.os.HUDOS;
+import com.reconinstruments.os.connectivity.HUDConnectivityManager;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest.RequestMethod;
 import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
@@ -29,6 +31,8 @@ public class UploadFileActivity extends Activity {
     public static int mGoodCounter = 0;
     public static int mBadCounter = 0;
 
+    private HUDConnectivityManager mHUDConnectivityManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,8 @@ public class UploadFileActivity extends Activity {
         mNumberOfGoodResponse = (TextView) findViewById(R.id.numberOfGoodResponse);
         mNumberOfBadResponse = (TextView) findViewById(R.id.numberOfBadResponse);
         mCommentTextView = (TextView) findViewById(R.id.commentTextView);
+
+        mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
     }
 
     @Override
@@ -53,18 +59,16 @@ public class UploadFileActivity extends Activity {
         mGoodCounter = 0;
         mBadCounter = 0;
 
-        for (int i = 0; i < 1; i++) {
-            new DownloadFileTask(data, url).execute();
-        }
+        new UploadFileTask(data, url).execute();
     }
 
-    private class DownloadFileTask extends AsyncTask<String, Void, Boolean> {
+    private class UploadFileTask extends AsyncTask<String, Void, Boolean> {
 
         byte[] mData;
         String mUrl;
         String mComment;
 
-        public DownloadFileTask(byte[] data, String url) {
+        public UploadFileTask(byte[] data, String url) {
             mUrl = url;
             mData = data;
             mRequestCounter++;
@@ -84,7 +88,7 @@ public class UploadFileActivity extends Activity {
 
                 //Http Post Request
                 HUDHttpRequest request = new HUDHttpRequest(RequestMethod.POST, new URL(mUrl), headers, mData);
-                HUDHttpResponse response = TestActivity.mHUDConnectivityManager.sendWebRequest(request);
+                HUDHttpResponse response = mHUDConnectivityManager.sendWebRequest(request);
                 
                 if (response.hasBody()) {
                     // the following code confirms we uploaded correctly, not useful
